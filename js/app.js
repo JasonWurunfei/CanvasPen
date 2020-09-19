@@ -17,7 +17,25 @@ class Element {
 }
 
 class Editor {
-    constructor(canvas) {
+    constructor(canvas, width, height) {
         this.canvas = canvas
+        this.canvas.width = width
+        this.canvas.height = height
+
+
+        // computed attributes
+        this.width = this.canvas.width
+        this.height = this.canvas.height
+
+        // create canvas obeject
+        if (this.canvas.getContext){
+            this.ctx = this.canvas.getContext('2d')
+        } else {
+            throw {
+                toString: function() {
+                    return "HTML 5 canvas is not supported on this browser."
+                } 
+            }
+        }
     }
 }

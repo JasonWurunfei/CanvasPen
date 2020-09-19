@@ -6,7 +6,11 @@
   <title>Skilltree</title>
 </head>
 <body>
-  <canvas id="can"></canvas>
+  <canvas id="canvas"></canvas>
   <script src="./js/app.js"></script>
+  <script>
+    let canvas = document.getElementById("canvas")
+    let editor = new Editor(canvas, 500, 400)
+  </script>
 </body>
 </html>
