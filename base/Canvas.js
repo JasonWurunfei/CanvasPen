@@ -45,7 +45,7 @@ canvas.addEventListener('mousedown', evt => {
 //drag
 let drag_target
 let pressedOn = function({ctx, evt}) {
-    drag_target = drag_target == undefined ? canvas.broadcast(evt): drag_target
+    drag_target = drag_target || canvas.broadcast(evt)
     if (drag_target != undefined && drag_target.pressedOn != undefined)
         drag_target.pressedOn({ctx, evt})
 }
